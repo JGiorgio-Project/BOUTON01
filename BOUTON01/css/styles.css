@@ -1,0 +1,74 @@
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    /*border: 1px red solid;*/
+}
+
+.container::before {
+    position: absolute;
+    background: #151515;
+    content: "";
+    width: 15px;
+    height: 1px;
+    top: 38px;
+    left: 21px;
+
+    transition: all 0.5s ease-in-out;
+}
+
+.container:hover::before {
+    background: #78a5d6;
+    width: 60px;
+    transition: all 0.5s ease-in-out;
+}
+
+.cercle {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border-top: 2px #151515 solid;
+
+    transform: rotate(-40deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.container:hover .cercle {
+    border-top: 2px #78a5d6 solid;
+    transform: rotate(-140deg);
+}
+
+.text {
+    position: relative;
+    top: 0px;
+    left: -30px;
+    font-family: "Caveat";
+    color: #78a5d6;
+    transition: all 0.5s ease-in-out;
+}
+
+.container:hover .text {
+    color: #151515;
+    transform: scale(1.1);
+    transition: all 0.5s ease-in-out;
+}
